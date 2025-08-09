@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Unit Converter</title>
+</head>
+<body>
+    <h1>Unit Converter</h1>
+    <nav class="navbar">
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'length' %}">Length</a></li>
+            <li><a href="{% url 'weight' %}">Weight</a></li>
+            <li><a href="{% url 'temperature' %}">Temperature</a></li>
+        </ul>
+    </nav>
+
+    {% block body %}
+    <main>
+        <h3>This is HomePage.</h3>
+        <p>Here you can convert using unit convereter</p>
+    </main>
+    {% endblock %}
+</body>
+</html>

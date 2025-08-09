@@ -1,0 +1,22 @@
+{% extends 'converter/base.html' %}
+
+{% block body %}
+<h3>Convert Temperature units</h3>
+
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Convert temperature</button>
+</form>
+
+{% if result is not None %}
+    <h3>
+        Result: {{value}} {{from_unit}} = {{result}} {{to_unit}}
+    </h3> 
+
+    <button type="reset" class="btn btn-secondary" style="max-width: 200px; margin: 0px 0px; ">
+        <a href="{% url 'temperature' %}" style="color: white; text-decoration: none;">Reset</a>
+    </button>
+{% endif %}
+
+{% endblock %}
